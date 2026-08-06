@@ -3,7 +3,7 @@
  */
 const PORTFOLIO_DATA = {
   meta: {
-    name: "Chakali Sathish",
+    name: "Sathish Chakali",
     role: "PL/SQL & ETL Developer",
     tagline: "I build and support reliable Oracle data warehouse pipelines.",
     email: "sathishchakali1023@gmail.com",

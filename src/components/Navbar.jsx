@@ -43,14 +43,12 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 flex justify-center transition-all duration-300 ${
-        scrolled ? "pt-3" : "pt-5"
-      }`}
+      className={`fixed inset-x-0 top-0 z-50 flex justify-center transition-all duration-300 ${scrolled ? "pt-3" : "pt-5"
+        }`}
     >
       <nav
-        className={`glass-panel flex w-[92%] max-w-3xl items-center justify-between rounded-2xl px-5 py-3 shadow-lg shadow-black/20 transition-all duration-300 ${
-          scrolled ? "shadow-black/40" : ""
-        }`}
+        className={`glass-panel flex w-[92%] max-w-3xl items-center justify-between rounded-2xl px-5 py-3 shadow-lg shadow-black/20 transition-all duration-300 ${scrolled ? "shadow-black/40" : ""
+          }`}
       >
         <a
           href="#home"
@@ -69,11 +67,10 @@ export default function Navbar() {
             <li key={link.id}>
               <button
                 onClick={() => handleNavClick(link.id)}
-                className={`rounded-full px-4 py-2 text-sm font-medium transition-colors duration-200 ${
-                  active === link.id
+                className={`rounded-full px-4 py-2 text-sm font-medium transition-colors duration-200 ${active === link.id
                     ? "bg-white/5 text-cyan-300"
                     : "text-slate-300 hover:text-white"
-                }`}
+                  }`}
               >
                 {link.label}
               </button>
@@ -104,11 +101,10 @@ export default function Navbar() {
               <li key={link.id}>
                 <button
                   onClick={() => handleNavClick(link.id)}
-                  className={`block w-full rounded-lg px-4 py-3 text-left text-sm font-medium transition-colors ${
-                    active === link.id
+                  className={`block w-full rounded-lg px-4 py-3 text-left text-sm font-medium transition-colors ${active === link.id
                       ? "bg-white/5 text-cyan-300"
                       : "text-slate-300 hover:text-white"
-                  }`}
+                    }`}
                 >
                   {link.label}
                 </button>
