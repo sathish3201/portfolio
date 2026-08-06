@@ -8,7 +8,7 @@ const PORTFOLIO_DATA = {
     tagline: "I build and support reliable Oracle data warehouse pipelines.",
     email: "sathishchakali1023@gmail.com",
     location: "Hyderabad, India",
-    resumeUrl: "#",
+    resumeUrl: "/portfolio/Sathish_Chakali_Resume.pdf",
     social: {
       github: "https://github.com/sathish3201",
       linkedin: "https://linkedin.com/in/sathish-chakali-91221b320",
@@ -165,10 +165,10 @@ const PORTFOLIO_DATA = {
   ],
 
   certifications: [
-    { name: "Java Full Stack Certification", issuer: "Wipro TalentNext", year: "2023" },
-    { name: "AI/ML Virtual Internship Certificate", issuer: "", year: "2023" },
-    { name: "Smart Coder Certification — Global Rank 1402/22591", issuer: "Smart Interviews", year: "2022" },
-    { name: "HTML Attributes & Tags", issuer: "GL Academy", year: "2022" },
+    { name: "Java Full Stack Certification", issuer: "Wipro TalentNext", year: "2023", url: "" },
+    { name: "AI/ML Virtual Internship Certificate", issuer: "", year: "2023", url: "" },
+    { name: "Smart Coder Certification — Global Rank 1402/22591", issuer: "Smart Interviews", year: "2022", url: "" },
+    { name: "HTML Attributes & Tags", issuer: "GL Academy", year: "2022", url: "" },
   ],
 };
 

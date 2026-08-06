@@ -65,6 +65,9 @@ export default function Hero() {
           </a>
           <a
             href={meta.resumeUrl}
+            download
+            target="_blank"
+            rel="noopener noreferrer"
             className="glass-panel rounded-full px-6 py-3 text-sm font-semibold text-slate-100 transition-colors duration-200 hover:border-cyan-400/40"
           >
             Download Resume
