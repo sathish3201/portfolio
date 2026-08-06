@@ -165,9 +165,9 @@ const PORTFOLIO_DATA = {
   ],
 
   certifications: [
-    { name: "Java Full Stack Certification", issuer: "Wipro TalentNext", year: "2023", url: "" },
-    { name: "AI/ML Virtual Internship Certificate", issuer: "", year: "2023", url: "" },
-    { name: "Smart Coder Certification — Global Rank 1402/22591", issuer: "Smart Interviews", year: "2022", url: "" },
+    { name: "Java Full Stack Certification", issuer: "Wipro TalentNext", year: "2023", url: "https://drive.google.com/file/d/1gk7wSlls5mJyMfP10AdYUadw734mZGRB/view" },
+    { name: "AI/ML Virtual Internship Certificate", issuer: "", year: "2023", url: "https://drive.google.com/file/d/1gk7wSlls5mJyMfP10AdYUadw734mZGRB/view" },
+    { name: "Smart Coder Certification — Global Rank 1402/22591", issuer: "Smart Interviews", year: "2022", url: "https://smartinterviews.in/certificate/3f36302d" },
     { name: "HTML Attributes & Tags", issuer: "GL Academy", year: "2022", url: "" },
   ],
 };
