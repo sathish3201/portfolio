@@ -93,6 +93,15 @@ const PORTFOLIO_DATA = {
       demo: "#",
       image: "gradient-3",
     },
+    {
+      title: "MockGenius AI — SaaS Mock Interview Platform",
+      description:
+        "An AI-powered SaaS application that simulates technical mock interviews. Features JWT authentication, AI-generated interview questions, speech-to-text response submission, instant LLM-based grading with detailed feedback, and a dashboard with score progression analytics.",
+      tech: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS", "Groq/Llama API"],
+      github: "https://github.com/sathish3201/mockgenius-ai",
+      demo: "https://mockgenius-ai-1.onrender.com",
+      image: "gradient-4",
+    },
   ],
 
   skills: [
