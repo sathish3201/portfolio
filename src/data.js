@@ -4,8 +4,8 @@
 const PORTFOLIO_DATA = {
   meta: {
     name: "Sathish Chakali",
-    role: "PL/SQL & ETL Developer",
-    tagline: "I build and support reliable Oracle data warehouse pipelines.",
+    role: "Full Stack Developer",
+    tagline: "React, JavaScript & REST APIs on the frontend — PL/SQL, Node.js & MongoDB on the backend.",
     email: "sathishchakali1023@gmail.com",
     location: "Hyderabad, India",
     resumeUrl: "/portfolio/Sathish_Chakali_Resume.pdf",
@@ -18,25 +18,25 @@ const PORTFOLIO_DATA = {
   hero: {
     greeting: "Hi, my name is",
     roles: [
-      "PL/SQL Developer",
-      "ETL & Data Warehouse Support",
-      "Oracle Performance Tuning",
-      "AI-Assisted Automation Learner",
+      "React Developer",
+      "Node.js & REST API Developer",
+      "Full Stack Engineer",
+      "AI-Assisted Automation Builder",
     ],
     summary:
-      "I develop and support Oracle-based data warehouse systems in production ETL environments — building PL/SQL packages, tuning SQL performance, and resolving data-load failures within SLA. Currently expanding into AI-assisted workflow automation.",
+      "I build and deploy complete full-stack projects — React on the frontend, Node.js and REST APIs on the backend — and bring the same production discipline from my Oracle PL/SQL work at Accenture into every app I ship, end-to-end.",
   },
 
   about: {
     paragraphs: [
-      "I'm a PL/SQL developer with 1.6+ years of hands-on experience developing and supporting Oracle-based data warehouse systems in a production ETL environment at Accenture. I work on building and troubleshooting ETL/batch data pipelines, PL/SQL package, procedure, and trigger development, SQL performance tuning, and exception handling for data quality and validation.",
-      "I have a proven record of resolving production data-load failures and ETL job ABENDs within SLA as part of a cross-functional support team — diagnosing issues across file transfers, batch schedules, and query performance to keep upstream and downstream data flowing.",
-      "I'm a fast learner of new tools and platforms, and I'm currently building AI-assisted automation skills using n8n and Claude/LLM integration to make data support workflows faster and more reliable.",
+      "I'm a full stack developer with 1.6+ years of experience at Accenture and a track record of independently building and deploying complete projects — React on the frontend, and Node.js, REST APIs, and MongoDB on the backend. I've shipped a full MERN-stack SaaS mock interview platform with JWT authentication and live LLM-based grading, alongside an Oracle ETL data warehouse pipeline, a documented SQL performance tuning case study, and an n8n + LLM incident-triage automation.",
+      "In my day-to-day role at Accenture, I work on Oracle-based data warehouse systems in a production ETL environment — building PL/SQL packages, tuning SQL performance, and resolving data-load failures within SLA as part of a cross-functional support team. That production discipline around debugging, exception handling, and reliability carries directly into how I build and deploy my own full-stack projects.",
+      "I'm a fast learner of new tools and platforms, comfortable taking a project from local development to a live, publicly accessible deployment end-to-end. I'm currently extending my backend experience into Node.js REST APIs and building AI-assisted automation skills using n8n and Claude/LLM integration.",
     ],
     focusAreas: [
-      "Oracle PL/SQL development",
-      "ETL pipeline support & troubleshooting",
-      "SQL performance tuning",
+      "Full-stack React & Node.js development",
+      "REST API design & integration",
+      "Oracle PL/SQL & SQL performance tuning",
       "AI-assisted workflow automation",
     ],
     stats: [
