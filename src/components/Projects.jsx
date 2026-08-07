@@ -9,6 +9,8 @@ const GRADIENTS = {
   "gradient-2": "from-purple-500/30 via-fuchsia-500/20 to-cyan-500/30",
   "gradient-3": "from-emerald-500/30 via-cyan-500/20 to-blue-500/30",
   "gradient-4": "from-rose-500/30 via-purple-500/20 to-cyan-500/30",
+  "gradient-5": "from-blue-500/30 via-indigo-500/20 to-cyan-500/30",
+  "gradient-6": "from-amber-500/30 via-orange-500/20 to-rose-500/30",
 };
 
 export default function Projects() {
