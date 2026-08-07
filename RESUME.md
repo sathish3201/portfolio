@@ -40,12 +40,12 @@ An AI-powered SaaS application that simulates technical mock interviews. Feature
 **Nexoria Technologies — Business Website**
 A full-stack marketing website for an IT services business, with a React frontend and Node/Express backend serving services, pricing, and portfolio content, a working contact form with email notifications, and a lightweight built-in FAQ chatbot.
 *React, Node.js, Express, Vite*
-[GitHub](https://github.com/sathish3201/nexoria-website)
+[GitHub](https://github.com/sathish3201/nexoria-website) · [Live demo](https://nexoria-frontend.onrender.com)
 
 **E-Commerce Storefront Demo**
 A working storefront demo with product catalog, cart, Razorpay test-mode checkout with server-side payment signature verification, an admin dashboard for inventory and orders, and a built-in FAQ chatbot.
 *React, Node.js, Express, Razorpay*
-[GitHub](https://github.com/sathish3201/nexoria-website)
+[GitHub](https://github.com/sathish3201/nexoria-website) · [Live demo](https://nexoria-storefront-frontend.onrender.com)
 
 **Oracle ETL Warehouse Pipeline**
 A star-schema Oracle data warehouse with a PL/SQL package that loads staging data into dimension and fact tables, with per-row exception handling, error logging, and batch-run tracking modeled on production ETL support workflows.

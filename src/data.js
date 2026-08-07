@@ -108,7 +108,7 @@ const PORTFOLIO_DATA = {
         "A full-stack marketing website for an IT services business, with a React frontend and Node/Express backend serving services, pricing, and portfolio content, a working contact form with email notifications, and a lightweight built-in FAQ chatbot.",
       tech: ["React", "Node.js", "Express", "Vite"],
       github: "https://github.com/sathish3201/nexoria-website",
-      demo: "#",
+      demo: "https://nexoria-frontend.onrender.com",
       image: "gradient-5",
     },
     {
@@ -117,7 +117,7 @@ const PORTFOLIO_DATA = {
         "A working storefront demo with product catalog, cart, Razorpay test-mode checkout with server-side payment signature verification, an admin dashboard for inventory and orders, and a built-in FAQ chatbot.",
       tech: ["React", "Node.js", "Express", "Razorpay"],
       github: "https://github.com/sathish3201/nexoria-website",
-      demo: "#",
+      demo: "https://nexoria-storefront-frontend.onrender.com",
       image: "gradient-6",
     },
   ],
