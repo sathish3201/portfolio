@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { MessageCircle, X, Send } from "lucide-react";
-import { findAnswer } from "../lib/chatbot.js";
+import { sendChatMessage } from "../lib/chatApi.js";
 
 const GREETING = {
   role: "assistant",
@@ -13,20 +13,19 @@ export default function ChatWidget() {
   const [input, setInput] = useState("");
   const [thinking, setThinking] = useState(false);
 
-  function handleSend(e) {
+  async function handleSend(e) {
     e.preventDefault();
     const text = input.trim();
     if (!text || thinking) return;
 
+    const history = messages.map(({ role, content }) => ({ role, content }));
     setMessages((prev) => [...prev, { role: "user", content: text }]);
     setInput("");
     setThinking(true);
 
-    setTimeout(() => {
-      const reply = findAnswer(text);
-      setMessages((prev) => [...prev, { role: "assistant", content: reply }]);
-      setThinking(false);
-    }, 400);
+    const reply = await sendChatMessage(text, history);
+    setMessages((prev) => [...prev, { role: "assistant", content: reply }]);
+    setThinking(false);
   }
 
   return (
