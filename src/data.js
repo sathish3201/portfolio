@@ -120,6 +120,15 @@ const PORTFOLIO_DATA = {
       demo: "https://nexoria-storefront-frontend.onrender.com",
       image: "gradient-6",
     },
+    {
+      title: "Object Design Field Guide",
+      description:
+        "A reference doc covering OOP fundamentals with a beginner before/after walkthrough, all five SOLID principles, and six core design patterns (Adapter, Decorator, Strategy, State, Observer, Factory) — each shown before and after, with UML diagrams and working code in Python, Java, C#, and React.",
+      tech: ["OOP", "SOLID", "Design Patterns", "UML"],
+      github: "",
+      demo: "/portfolio/oop-reference.html",
+      image: "gradient-1",
+    },
   ],
 
   skills: [

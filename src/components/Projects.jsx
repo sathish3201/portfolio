@@ -56,22 +56,26 @@ export default function Projects() {
                 </div>
 
                 <div className="mt-6 flex items-center gap-4">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-sm font-medium text-slate-300 transition-colors hover:text-cyan-300"
-                  >
-                    <GithubIcon size={16} /> Code
-                  </a>
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-sm font-medium text-slate-300 transition-colors hover:text-cyan-300"
-                  >
-                    <ExternalLink size={16} /> Live Demo
-                  </a>
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-sm font-medium text-slate-300 transition-colors hover:text-cyan-300"
+                    >
+                      <GithubIcon size={16} /> Code
+                    </a>
+                  )}
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-sm font-medium text-slate-300 transition-colors hover:text-cyan-300"
+                    >
+                      <ExternalLink size={16} /> {project.demo.startsWith("/") ? "Read Guide" : "Live Demo"}
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
