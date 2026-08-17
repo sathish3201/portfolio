@@ -1,16 +1,21 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import FALLBACK_DATA from "../data-fallback.json";
 
-// Portfolio content now lives on nexoria-backend (backend/data/portfolio-site.json)
-// instead of being bundled into this site's JS at build time — editing that
-// JSON updates the live site on next page load, no rebuild/redeploy needed.
-// This context fetches it once on mount and provides it to every section.
+// Portfolio content lives on nexoria-backend (backend/data/portfolio-site.json)
+// so it can be edited without a rebuild/redeploy — but the site must not
+// fully depend on that backend being reachable just to render. src/data-fallback.json
+// is a bundled snapshot of the same content (update it by re-copying that
+// file whenever the backend JSON changes meaningfully). The site renders
+// immediately from this snapshot, then quietly swaps in fresh data if the
+// backend responds — so a cold-starting or unreachable backend degrades to
+// "slightly stale content" instead of "blank loading screen forever."
 const API_BASE = import.meta.env.VITE_API_BASE || "https://nexoria-backend-og2p.onrender.com/api";
 
 const PortfolioDataContext = createContext(null);
 
 export function PortfolioDataProvider({ children }) {
-  const [data, setData] = useState(null);
-  const [error, setError] = useState(null);
+  const [data, setData] = useState(FALLBACK_DATA);
+  const [isLive, setIsLive] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -21,10 +26,16 @@ export function PortfolioDataProvider({ children }) {
         return res.json();
       })
       .then((json) => {
-        if (!cancelled) setData(json);
+        if (!cancelled) {
+          setData(json);
+          setIsLive(true);
+        }
       })
       .catch((err) => {
-        if (!cancelled) setError(err.message);
+        // Swallow the error — FALLBACK_DATA is already rendered, so
+        // there's nothing broken to show the visitor. Log for debugging
+        // only (e.g. Render's free tier cold-starting or being down).
+        console.warn("Could not fetch live portfolio data, showing bundled snapshot instead:", err.message);
       });
 
     return () => {
@@ -33,7 +44,7 @@ export function PortfolioDataProvider({ children }) {
   }, []);
 
   return (
-    <PortfolioDataContext.Provider value={{ data, error }}>{children}</PortfolioDataContext.Provider>
+    <PortfolioDataContext.Provider value={{ data, isLive }}>{children}</PortfolioDataContext.Provider>
   );
 }
 
