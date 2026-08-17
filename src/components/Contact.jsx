@@ -1,5 +1,5 @@
 import { Mail, MapPin, ArrowUpRight } from "lucide-react";
-import PORTFOLIO_DATA from "../data";
+import { usePortfolioData } from "../lib/portfolioDataContext";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
 import { GithubIcon, LinkedinIcon, TwitterIcon } from "./SocialIcons";
@@ -7,7 +7,8 @@ import { GithubIcon, LinkedinIcon, TwitterIcon } from "./SocialIcons";
 const SOCIAL_ICONS = { github: GithubIcon, linkedin: LinkedinIcon, twitter: TwitterIcon };
 
 export default function Contact() {
-  const { meta } = PORTFOLIO_DATA;
+  const { data } = usePortfolioData();
+  const { meta } = data;
 
   return (
     <section id="contact" className="relative mx-auto max-w-4xl px-6 py-28">

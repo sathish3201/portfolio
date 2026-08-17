@@ -1,10 +1,11 @@
 import { CheckCircle2 } from "lucide-react";
-import PORTFOLIO_DATA from "../data";
+import { usePortfolioData } from "../lib/portfolioDataContext";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
 
 export default function About() {
-  const { about } = PORTFOLIO_DATA;
+  const { data } = usePortfolioData();
+  const { about } = data;
 
   return (
     <section id="about" className="mx-auto max-w-6xl px-6 py-28">

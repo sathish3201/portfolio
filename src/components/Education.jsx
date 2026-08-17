@@ -1,10 +1,11 @@
 import { GraduationCap, Award, ExternalLink } from "lucide-react";
-import PORTFOLIO_DATA from "../data";
+import { usePortfolioData } from "../lib/portfolioDataContext";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
 
 export default function Education() {
-  const { education, certifications } = PORTFOLIO_DATA;
+  const { data } = usePortfolioData();
+  const { education, certifications } = data;
 
   return (
     <section id="education" className="mx-auto max-w-4xl px-6 py-28 space-y-16">

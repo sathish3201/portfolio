@@ -1,5 +1,5 @@
 import { ExternalLink, Sparkles } from "lucide-react";
-import PORTFOLIO_DATA from "../data";
+import { usePortfolioData } from "../lib/portfolioDataContext";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
 import { GithubIcon } from "./SocialIcons";
@@ -13,8 +13,20 @@ const GRADIENTS = {
   "gradient-6": "from-amber-500/30 via-orange-500/20 to-rose-500/30",
 };
 
+const API_BASE = import.meta.env.VITE_API_BASE || "https://nexoria-backend-og2p.onrender.com/api";
+
+// A demo URL starting with "/" (e.g. "/api/oop-reference") is a path on
+// the backend, not this static site's own origin — resolve it against
+// the backend before use. Full URLs (https://...) pass through as-is.
+function resolveDemoUrl(demo) {
+  if (!demo || demo === "#" || /^https?:\/\//.test(demo)) return demo;
+  const backendOrigin = API_BASE.replace(/\/api\/?$/, "");
+  return `${backendOrigin}${demo}`;
+}
+
 export default function Projects() {
-  const { projects } = PORTFOLIO_DATA;
+  const { data } = usePortfolioData();
+  const { projects } = data;
 
   return (
     <section id="projects" className="mx-auto max-w-6xl px-6 py-28">
@@ -68,7 +80,7 @@ export default function Projects() {
                   )}
                   {project.demo && (
                     <a
-                      href={project.demo}
+                      href={resolveDemoUrl(project.demo)}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 text-sm font-medium text-slate-300 transition-colors hover:text-cyan-300"

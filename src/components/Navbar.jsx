@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import PORTFOLIO_DATA from "../data";
+import { usePortfolioData } from "../lib/portfolioDataContext";
 
 const LINKS = [
   { id: "about", label: "About" },
@@ -11,6 +11,7 @@ const LINKS = [
 ];
 
 export default function Navbar() {
+  const { data } = usePortfolioData();
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("");
   const [scrolled, setScrolled] = useState(false);
@@ -58,7 +59,7 @@ export default function Navbar() {
           }}
           className="font-mono text-lg font-bold text-slate-50"
         >
-          <span className="text-gradient">{PORTFOLIO_DATA.meta.name.split(" ")[0]}</span>
+          <span className="text-gradient">{data.meta.name.split(" ")[0]}</span>
           <span className="text-slate-500">.</span>
         </a>
 

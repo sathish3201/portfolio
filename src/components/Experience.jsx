@@ -1,10 +1,11 @@
 import { Briefcase, MapPin } from "lucide-react";
-import PORTFOLIO_DATA from "../data";
+import { usePortfolioData } from "../lib/portfolioDataContext";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
 
 export default function Experience() {
-  const { experience } = PORTFOLIO_DATA;
+  const { data } = usePortfolioData();
+  const { experience } = data;
 
   return (
     <section id="experience" className="mx-auto max-w-4xl px-6 py-28">

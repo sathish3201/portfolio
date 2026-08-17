@@ -1,7 +1,8 @@
-import PORTFOLIO_DATA from "../data";
+import { usePortfolioData } from "../lib/portfolioDataContext";
 
 export default function Footer() {
-  const { meta } = PORTFOLIO_DATA;
+  const { data } = usePortfolioData();
+  const { meta } = data;
   const year = new Date().getFullYear();
 
   return (

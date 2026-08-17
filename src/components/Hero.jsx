@@ -1,6 +1,6 @@
 import { useEffect, useState, lazy, Suspense } from "react";
 import { ArrowRight } from "lucide-react";
-import PORTFOLIO_DATA from "../data";
+import { usePortfolioData } from "../lib/portfolioDataContext";
 import { GithubIcon, LinkedinIcon, TwitterIcon } from "./SocialIcons";
 
 // Three.js + react-three-fiber add ~800KB to the bundle — lazy-load so
@@ -11,8 +11,20 @@ const ParticleField = lazy(() => import("./ParticleField"));
 
 const SOCIAL_ICONS = { github: GithubIcon, linkedin: LinkedinIcon, twitter: TwitterIcon };
 
+const API_BASE = import.meta.env.VITE_API_BASE || "https://nexoria-backend-og2p.onrender.com/api";
+
+// resumeUrl from portfolio-site.json is a path relative to the backend
+// (e.g. "/api/resume") — resolve it against the backend's actual origin
+// rather than this site's own origin.
+function resolveResumeUrl(resumeUrl) {
+  if (/^https?:\/\//.test(resumeUrl)) return resumeUrl;
+  const backendOrigin = API_BASE.replace(/\/api\/?$/, "");
+  return `${backendOrigin}${resumeUrl}`;
+}
+
 export default function Hero() {
-  const { meta, hero } = PORTFOLIO_DATA;
+  const { data } = usePortfolioData();
+  const { meta, hero } = data;
   const [roleIndex, setRoleIndex] = useState(0);
 
   useEffect(() => {
@@ -73,7 +85,7 @@ export default function Hero() {
             <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
           </a>
           <a
-            href={meta.resumeUrl}
+            href={resolveResumeUrl(meta.resumeUrl)}
             download
             target="_blank"
             rel="noopener noreferrer"

@@ -8,8 +8,15 @@ import Education from "./components/Education";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ChatWidget from "./components/ChatWidget";
+import LoadingScreen, { LoadingError } from "./components/LoadingScreen";
+import { PortfolioDataProvider, usePortfolioData } from "./lib/portfolioDataContext";
 
-export default function App() {
+function AppContent() {
+  const { data, error } = usePortfolioData();
+
+  if (error) return <LoadingError message={error} />;
+  if (!data) return <LoadingScreen />;
+
   return (
     <div className="min-h-screen bg-[#0b0f19] text-slate-300">
       <Navbar />
@@ -25,5 +32,13 @@ export default function App() {
       <Footer />
       <ChatWidget />
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <PortfolioDataProvider>
+      <AppContent />
+    </PortfolioDataProvider>
   );
 }

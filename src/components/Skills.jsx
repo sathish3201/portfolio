@@ -1,5 +1,5 @@
 import { LayoutPanelLeft, Server, Cloud, Wrench, Code2 } from "lucide-react";
-import PORTFOLIO_DATA from "../data";
+import { usePortfolioData } from "../lib/portfolioDataContext";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
 
@@ -11,7 +11,8 @@ const ICONS = {
 };
 
 export default function Skills() {
-  const { skills } = PORTFOLIO_DATA;
+  const { data } = usePortfolioData();
+  const { skills } = data;
 
   return (
     <section id="skills" className="mx-auto max-w-6xl px-6 py-28">
