@@ -1,7 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, lazy, Suspense } from "react";
 import { ArrowRight } from "lucide-react";
 import PORTFOLIO_DATA from "../data";
 import { GithubIcon, LinkedinIcon, TwitterIcon } from "./SocialIcons";
+
+// Three.js + react-three-fiber add ~800KB to the bundle — lazy-load so
+// it downloads after the initial page paint instead of blocking it.
+// Nothing renders in its place before it loads (the two blur-orb divs
+// above already provide a background), so no loading fallback is needed.
+const ParticleField = lazy(() => import("./ParticleField"));
 
 const SOCIAL_ICONS = { github: GithubIcon, linkedin: LinkedinIcon, twitter: TwitterIcon };
 
@@ -30,8 +36,11 @@ export default function Hero() {
         className="animate-glow-pulse pointer-events-none absolute right-1/4 bottom-0 h-[400px] w-[400px] rounded-full bg-purple-500/20 blur-[120px]"
         style={{ animationDelay: "2s" }}
       />
+      <Suspense fallback={null}>
+        <ParticleField />
+      </Suspense>
 
-      <div className="animate-fade-up mx-auto w-full max-w-4xl text-center">
+      <div className="animate-fade-up relative mx-auto w-full max-w-4xl text-center">
         <p className="mb-4 font-mono text-sm font-medium tracking-wider text-cyan-400 uppercase">
           {hero.greeting} {meta.name}
         </p>
