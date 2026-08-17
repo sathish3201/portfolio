@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MessageCircle, X, Send } from "lucide-react";
+import { MessageCircle, X, Send, Loader2 } from "lucide-react";
 import { sendChatMessage } from "../lib/chatApi.js";
 
 const GREETING = {
@@ -18,12 +18,12 @@ export default function ChatWidget() {
     const text = input.trim();
     if (!text || thinking) return;
 
-    // GREETING is a canned UI bubble, not a real conversation turn â€” the
+    // GREETING is a canned UI bubble, not a real conversation turn — the
     // model's chat template (Gemma) requires the turn sequence to start
     // with "user" and strictly alternate user/assistant from there.
     // Sending GREETING as history makes every first message start with
     // "assistant", which the template hard-rejects with a 400. Exclude
-    // it from what gets sent as history (by reference â€” it's a stable
+    // it from what gets sent as history (by reference — it's a stable
     // module-level constant, so this reliably matches only the greeting
     // bubble and nothing else).
     const history = messages
@@ -67,8 +67,9 @@ export default function ChatWidget() {
               </div>
             ))}
             {thinking && (
-              <div className="max-w-[85%] rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-400">
-                Thinkingâ€¦
+              <div className="flex max-w-[85%] items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-400">
+                <Loader2 size={14} className="animate-spin" />
+                <span>Thinking</span>
               </div>
             )}
           </div>
@@ -78,7 +79,7 @@ export default function ChatWidget() {
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Type your messageâ€¦"
+              placeholder="Type your message…"
               disabled={thinking}
               className="flex-1 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-100 outline-none focus:border-cyan-400"
             />
