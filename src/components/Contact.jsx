@@ -2,6 +2,7 @@ import { Mail, MapPin, ArrowUpRight } from "lucide-react";
 import { usePortfolioData } from "../lib/portfolioDataContext";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
+import TiltCard from "./TiltCard";
 import { GithubIcon, LinkedinIcon, TwitterIcon } from "./SocialIcons";
 
 const SOCIAL_ICONS = { github: GithubIcon, linkedin: LinkedinIcon, twitter: TwitterIcon };
@@ -47,16 +48,21 @@ export default function Contact() {
             const Icon = SOCIAL_ICONS[key];
             if (!Icon) return null;
             return (
-              <a
+              <TiltCard
                 key={key}
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={key}
-                className="glass-panel flex h-11 w-11 items-center justify-center rounded-full text-slate-300 transition-colors duration-200 hover:border-cyan-400/40 hover:text-cyan-300"
+                liftClassName=""
+                className="glass-panel flex h-11 w-11 items-center justify-center rounded-full text-slate-300 hover:border-cyan-400/40 hover:text-cyan-300"
               >
-                <Icon size={18} />
-              </a>
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={key}
+                  className="flex h-full w-full items-center justify-center transition-colors duration-200"
+                >
+                  <Icon size={18} />
+                </a>
+              </TiltCard>
             );
           })}
         </div>

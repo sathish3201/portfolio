@@ -2,6 +2,7 @@ import { useEffect, useState, lazy, Suspense } from "react";
 import { ArrowRight } from "lucide-react";
 import { usePortfolioData } from "../lib/portfolioDataContext";
 import { GithubIcon, LinkedinIcon, TwitterIcon } from "./SocialIcons";
+import TiltCard from "./TiltCard";
 
 // Three.js + react-three-fiber add ~800KB to the bundle — lazy-load so
 // it downloads after the initial page paint instead of blocking it.
@@ -73,26 +74,30 @@ export default function Hero() {
         </p>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <a
-            href="#projects"
-            onClick={(e) => {
-              e.preventDefault();
-              document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
-            }}
-            className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 px-6 py-3 text-sm font-semibold text-slate-950 transition-transform duration-200 hover:scale-105"
-          >
-            View My Work
-            <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-          </a>
-          <a
-            href={resolveResumeUrl(meta.resumeUrl)}
-            download
-            target="_blank"
-            rel="noopener noreferrer"
-            className="glass-panel rounded-full px-6 py-3 text-sm font-semibold text-slate-100 transition-colors duration-200 hover:border-cyan-400/40"
-          >
-            Download Resume
-          </a>
+          <TiltCard liftClassName="" className="rounded-full">
+            <a
+              href="#projects"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 px-6 py-3 text-sm font-semibold text-slate-950 transition-transform duration-200 hover:scale-105"
+            >
+              View My Work
+              <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+            </a>
+          </TiltCard>
+          <TiltCard liftClassName="" className="rounded-full">
+            <a
+              href={resolveResumeUrl(meta.resumeUrl)}
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glass-panel block rounded-full px-6 py-3 text-sm font-semibold text-slate-100 transition-colors duration-200 hover:border-cyan-400/40"
+            >
+              Download Resume
+            </a>
+          </TiltCard>
         </div>
 
         <div className="mt-10 flex items-center justify-center gap-5">

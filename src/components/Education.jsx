@@ -2,6 +2,7 @@ import { GraduationCap, Award, ExternalLink } from "lucide-react";
 import { usePortfolioData } from "../lib/portfolioDataContext";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
+import TiltCard from "./TiltCard";
 
 export default function Education() {
   const { data } = usePortfolioData();
@@ -18,7 +19,7 @@ export default function Education() {
         <div className="space-y-4">
           {education.map((edu, i) => (
             <Reveal key={`${edu.school}-${i}`} delay={i * 100}>
-              <div className="glass-panel flex items-center gap-5 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-purple-400/30">
+              <TiltCard className="glass-panel flex items-center gap-5 rounded-2xl p-6 hover:border-purple-400/30">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400/20 to-purple-500/20">
                   <GraduationCap size={22} className="text-purple-300" />
                 </div>
@@ -29,7 +30,7 @@ export default function Education() {
                   </div>
                   <p className="font-mono text-sm text-slate-400">{edu.period}</p>
                 </div>
-              </div>
+              </TiltCard>
             </Reveal>
           ))}
         </div>
@@ -47,7 +48,7 @@ export default function Education() {
               const hasUrl = cert.url && cert.url !== "#" && cert.url.trim() !== "";
               
               const CardContent = (
-                <div className="glass-panel flex items-center gap-5 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/30">
+                <TiltCard className="glass-panel flex items-center gap-5 rounded-2xl p-6 hover:border-cyan-400/30">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400/20 to-purple-500/20">
                     <Award size={22} className="text-cyan-300" />
                   </div>
@@ -61,7 +62,7 @@ export default function Education() {
                     </div>
                     <p className="font-mono text-sm text-slate-400">{cert.year}</p>
                   </div>
-                </div>
+                </TiltCard>
               );
 
               return (
@@ -71,7 +72,7 @@ export default function Education() {
                       {CardContent}
                     </a>
                   ) : (
-                    <div>{CardContent}</div>
+                    CardContent
                   )}
                 </Reveal>
               );

@@ -1,7 +1,12 @@
+import { lazy } from "react";
 import { Briefcase, MapPin } from "lucide-react";
 import { usePortfolioData } from "../lib/portfolioDataContext";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
+import TiltCard from "./TiltCard";
+import Scene3D from "./Scene3D";
+
+const ExperienceNode3D = lazy(() => import("./3d/ExperienceNode3D"));
 
 export default function Experience() {
   const { data } = usePortfolioData();
@@ -20,11 +25,17 @@ export default function Experience() {
           {experience.map((job, i) => (
             <Reveal key={`${job.company}-${i}`} delay={i * 100}>
               <div className="relative flex gap-6 pl-2 sm:gap-8">
-                <div className="glass-panel relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-cyan-400/40 sm:h-10 sm:w-10">
-                  <Briefcase size={16} className="text-cyan-300" />
+                <div className="glass-panel relative z-10 flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-full border-cyan-400/40 sm:h-10 sm:w-10">
+                  <Scene3D
+                    scene={ExperienceNode3D}
+                    accent={i % 2 === 0 ? "cyan" : "purple"}
+                    threshold={0.2}
+                    className="flex h-full w-full items-center justify-center"
+                    fallback={<Briefcase size={16} className="text-cyan-300" />}
+                  />
                 </div>
 
-                <div className="glass-panel flex-1 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/30">
+                <TiltCard className="glass-panel flex-1 rounded-2xl p-6 hover:border-cyan-400/30">
                   <div className="flex flex-wrap items-start justify-between gap-2">
                     <div>
                       <h3 className="text-lg font-bold text-slate-50">{job.role}</h3>
@@ -57,7 +68,7 @@ export default function Experience() {
                       </span>
                     ))}
                   </div>
-                </div>
+                </TiltCard>
               </div>
             </Reveal>
           ))}

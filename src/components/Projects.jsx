@@ -1,8 +1,13 @@
+import { lazy } from "react";
 import { ExternalLink, Sparkles } from "lucide-react";
 import { usePortfolioData } from "../lib/portfolioDataContext";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
+import Scene3D from "./Scene3D";
+import TiltCard from "./TiltCard";
 import { GithubIcon } from "./SocialIcons";
+
+const ProjectArchitectureScene = lazy(() => import("./3d/ProjectArchitectureScene"));
 
 const GRADIENTS = {
   "gradient-1": "from-cyan-500/30 via-blue-500/20 to-purple-500/30",
@@ -11,6 +16,7 @@ const GRADIENTS = {
   "gradient-4": "from-rose-500/30 via-purple-500/20 to-cyan-500/30",
   "gradient-5": "from-blue-500/30 via-indigo-500/20 to-cyan-500/30",
   "gradient-6": "from-amber-500/30 via-orange-500/20 to-rose-500/30",
+  "gradient-flagship": "from-cyan-500/40 via-purple-500/25 to-purple-600/40",
 };
 
 const API_BASE = import.meta.env.VITE_API_BASE || "https://nexoria-backend-og2p.onrender.com/api";
@@ -37,16 +43,33 @@ export default function Projects() {
       <div className="grid gap-6 sm:grid-cols-2">
         {projects.map((project, i) => (
           <Reveal key={project.title} delay={i * 100}>
-            <div className="glass-panel group h-full overflow-hidden rounded-2xl transition-all duration-300 hover:-translate-y-1.5 hover:border-cyan-400/30 hover:shadow-2xl hover:shadow-cyan-500/10">
+            <TiltCard
+              liftClassName="hover:-translate-y-1.5"
+              className="glass-panel group h-full overflow-hidden rounded-2xl hover:border-cyan-400/30 hover:shadow-2xl hover:shadow-cyan-500/10"
+            >
               <div
                 className={`relative flex h-40 items-center justify-center overflow-hidden bg-gradient-to-br ${
                   GRADIENTS[project.image] ?? GRADIENTS["gradient-1"]
                 }`}
               >
-                <Sparkles
-                  size={40}
-                  className="text-white/70 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6"
-                />
+                {project.image === "gradient-flagship" ? (
+                  <Scene3D
+                    scene={ProjectArchitectureScene}
+                    threshold={0.3}
+                    className="absolute inset-0"
+                    fallback={
+                      <Sparkles
+                        size={40}
+                        className="absolute inset-0 m-auto text-white/70 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6"
+                      />
+                    }
+                  />
+                ) : (
+                  <Sparkles
+                    size={40}
+                    className="text-white/70 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6"
+                  />
+                )}
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_60%)]" />
               </div>
 
@@ -90,7 +113,7 @@ export default function Projects() {
                   )}
                 </div>
               </div>
-            </div>
+            </TiltCard>
           </Reveal>
         ))}
       </div>
