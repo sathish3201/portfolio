@@ -18,7 +18,7 @@ export default function About() {
       <Scene3D
         scene={AboutBackgroundGraph}
         threshold={0.2}
-        className="pointer-events-none absolute inset-0 z-0 opacity-50"
+        className="pointer-events-none absolute inset-y-0 right-0 left-1/2 z-0 opacity-[0.18]"
         fallback={null}
       />
 

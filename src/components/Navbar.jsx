@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { usePortfolioData } from "../lib/portfolioDataContext";
+import StatusBadge from "./StatusBadge";
 
 const LINKS = [
   { id: "about", label: "About" },
@@ -79,12 +80,15 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <button
-          onClick={() => handleNavClick("contact")}
-          className="hidden rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 px-4 py-2 text-sm font-semibold text-slate-950 transition-transform duration-200 hover:scale-105 md:inline-block"
-        >
-          Let's Talk
-        </button>
+        <div className="hidden items-center gap-3 md:flex">
+          <StatusBadge />
+          <button
+            onClick={() => handleNavClick("contact")}
+            className="rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 px-4 py-2 text-sm font-semibold text-slate-950 transition-transform duration-200 hover:scale-105"
+          >
+            Let's Talk
+          </button>
+        </div>
 
         <button
           className="text-slate-200 md:hidden"
