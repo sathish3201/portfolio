@@ -3,12 +3,14 @@ import { ArrowRight } from "lucide-react";
 import { usePortfolioData } from "../lib/portfolioDataContext";
 import { GithubIcon, LinkedinIcon, TwitterIcon } from "./SocialIcons";
 import TiltCard from "./TiltCard";
+import Scene3D from "./Scene3D";
 
 // Three.js + react-three-fiber add ~800KB to the bundle — lazy-load so
 // it downloads after the initial page paint instead of blocking it.
 // Nothing renders in its place before it loads (the two blur-orb divs
 // above already provide a background), so no loading fallback is needed.
 const ParticleField = lazy(() => import("./ParticleField"));
+const HeroPipelineScene = lazy(() => import("./3d/HeroPipelineScene"));
 
 const SOCIAL_ICONS = { github: GithubIcon, linkedin: LinkedinIcon, twitter: TwitterIcon };
 
@@ -53,7 +55,14 @@ export default function Hero() {
         <ParticleField />
       </Suspense>
 
-      <div className="animate-fade-up relative mx-auto w-full max-w-4xl text-center">
+      <Scene3D
+        scene={HeroPipelineScene}
+        threshold={0.3}
+        className="pointer-events-none absolute inset-0 z-0 opacity-70"
+        fallback={null}
+      />
+
+      <div className="animate-fade-up relative z-10 mx-auto w-full max-w-4xl text-center">
         <p className="mb-4 font-mono text-sm font-medium tracking-wider text-cyan-400 uppercase">
           {hero.greeting} {meta.name}
         </p>

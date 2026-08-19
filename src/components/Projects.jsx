@@ -8,6 +8,7 @@ import TiltCard from "./TiltCard";
 import { GithubIcon } from "./SocialIcons";
 
 const ProjectArchitectureScene = lazy(() => import("./3d/ProjectArchitectureScene"));
+const CardNodeGraph = lazy(() => import("./3d/CardNodeGraph"));
 
 const GRADIENTS = {
   "gradient-1": "from-cyan-500/30 via-blue-500/20 to-purple-500/30",
@@ -65,9 +66,18 @@ export default function Projects() {
                     }
                   />
                 ) : (
-                  <Sparkles
-                    size={40}
-                    className="text-white/70 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6"
+                  <Scene3D
+                    scene={CardNodeGraph}
+                    nodeCount={2 + (i % 3)}
+                    accent={i % 2 === 0 ? "cyan" : "purple"}
+                    threshold={0.3}
+                    className="absolute inset-0"
+                    fallback={
+                      <Sparkles
+                        size={40}
+                        className="absolute inset-0 m-auto text-white/70 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6"
+                      />
+                    }
                   />
                 )}
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_60%)]" />
