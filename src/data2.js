@@ -1,160 +1,286 @@
 /**
- * All portfolio content lives here. Replace these values with your real
- * resume data (this file will be regenerated from your resume PDF).
+ * All portfolio content lives here. Sourced from the real, complete resume
+ * data in nexoria-website/backend/data/portfolio-site.json.
  */
 const PORTFOLIO_DATA = {
   meta: {
-    name: "Alex Rivera",
-    role: "Full-Stack Software Engineer",
-    tagline: "I build fast, accessible, delightful web experiences.",
-    email: "alex.rivera.dev@gmail.com",
-    location: "Remote / San Francisco, CA",
+    name: "Sathish Chakali",
+    role: "Full Stack Developer",
+    tagline:
+      "React, JavaScript & REST APIs on the frontend — PL/SQL, Node.js & MongoDB on the backend.",
+    phone: "+91 6301343762",
+    email: "sathishchakali1023@gmail.com",
+    location: "Hyderabad, India",
     resumeUrl: "#",
     social: {
-      github: "https://github.com/alexrivera",
-      linkedin: "https://linkedin.com/in/alexrivera",
-      twitter: "https://twitter.com/alexrivera_dev",
+      github: "https://github.com/sathish3201",
+      linkedin: "https://linkedin.com/in/sathish-chakali-91221b320",
     },
   },
 
   hero: {
     greeting: "Hi, my name is",
     roles: [
-      "Full-Stack Engineer",
-      "React & Node Specialist",
-      "Cloud Architecture Enthusiast",
-      "Open Source Contributor",
+      "React Developer",
+      "Node.js & REST API Developer",
+      "Full Stack Engineer",
+      "AI-Assisted Automation Builder",
     ],
     summary:
-      "I design and build performant, scalable web applications — from pixel-perfect interfaces to resilient backend systems. Currently focused on developer tooling and AI-assisted products.",
+      "I build and deploy complete full-stack projects — React on the frontend, Node.js and REST APIs on the backend — and bring the same production discipline from my Oracle PL/SQL work at Accenture into every app I ship, end-to-end.",
   },
 
   about: {
     paragraphs: [
-      "I'm a software engineer with 6+ years of experience turning ambiguous problems into shipped, reliable products. My path started in embedded systems, which gave me a deep respect for performance and constraints — something I still carry into every frontend and backend decision I make today.",
-      "I care most about developer experience, accessible design, and systems that are easy to reason about six months later. Outside of core feature work, I enjoy mentoring junior engineers, contributing to open-source tooling, and writing about the tradeoffs behind architecture decisions.",
-      "Currently, I'm exploring the intersection of AI tooling and traditional software engineering workflows — building agents, copilots, and internal tools that make teams faster without sacrificing code quality.",
+      "I'm a full stack developer with 1.6+ years of experience at Accenture and a track record of independently building and deploying complete projects — React on the frontend, and Node.js, REST APIs, and MongoDB on the backend. I've shipped a full MERN-stack SaaS mock interview platform with JWT authentication and live LLM-based grading, alongside an Oracle ETL data warehouse pipeline, a documented SQL performance tuning case study, and an n8n + LLM incident-triage automation.",
+      "In my day-to-day role at Accenture, I work on Oracle-based data warehouse systems in a production ETL environment — building PL/SQL packages, tuning SQL performance, and resolving data-load failures within SLA as part of a cross-functional support team. That production discipline around debugging, exception handling, and reliability carries directly into how I build and deploy my own full-stack projects.",
+      "I'm a fast learner of new tools and platforms, comfortable taking a project from local development to a live, publicly accessible deployment end-to-end. I'm currently extending my backend experience into Node.js REST APIs and building AI-assisted automation skills using n8n and Claude/LLM integration.",
     ],
     focusAreas: [
-      "Scalable frontend architecture",
-      "Developer tooling & DX",
-      "Cloud-native backend systems",
-      "AI-assisted product workflows",
+      "Full-stack React & Node.js development",
+      "REST API design & integration",
+      "Oracle PL/SQL & SQL performance tuning",
+      "AI-assisted workflow automation",
     ],
     stats: [
-      { label: "Years Experience", value: "6+" },
-      { label: "Projects Shipped", value: "40+" },
-      { label: "Open Source Repos", value: "18" },
-      { label: "Teams Mentored", value: "5" },
+      { label: "Years Experience", value: "1.6+" },
+      { label: "Daily/Weekly Jobs Supported", value: "Multiple" },
+      { label: "Support Pod Size", value: "3" },
+      { label: "Certifications", value: "4" },
     ],
   },
 
+  resumeSummary:
+    "Full stack developer with 1.6+ years of experience at Accenture, building production Oracle PL/SQL systems by day and independently shipping complete full-stack projects on the side — React on the frontend, and Node.js/Express, REST APIs, and MongoDB on the backend. Has built and deployed a full MERN-stack SaaS mock interview platform with JWT authentication and live LLM-based grading (Groq/Llama), a full-stack business marketing site with a working contact form and built-in FAQ chatbot, an e-commerce storefront demo with Razorpay test-mode checkout and server-side payment verification, an Oracle ETL data warehouse pipeline with production-style exception handling, a documented SQL performance tuning case study, and an n8n + LLM incident-triage automation — all version-controlled on GitHub, several with live public deployments on Render. Comfortable with Git-based workflows, debugging, and deployment end-to-end, from local development to publicly accessible URLs. Currently extending backend experience into Node.js REST APIs and AI-assisted workflow automation (n8n, Claude/LLM integration). Java Full Stack Certified (Wipro TalentNext); eager to learn, curious, and looking to grow with a collaborative team.",
+
+  resumeSkillGroups: [
+    { label: "Frontend", items: "HTML, CSS, JavaScript, React (UI Development), Tailwind CSS" },
+    {
+      label: "Backend",
+      items: "Node.js & Express, Oracle PL/SQL & APEX, Java, Python, Django (REST Framework)",
+    },
+    {
+      label: "APIs & Databases",
+      items: "RESTful API Development, MongoDB (NoSQL), MySQL, PostgreSQL, Oracle SQL",
+    },
+    {
+      label: "AI & Automation",
+      items: "LLM API Integration (Groq/Llama, Claude), n8n Workflow Automation, Structured Prompting",
+    },
+    {
+      label: "Version Control & Deployment",
+      items: "Git/GitHub, CI/CD Pipelines (GitHub Actions), Render, GitHub Pages, MongoDB Atlas",
+    },
+    {
+      label: "Debugging & Testing",
+      items: "Root-Cause Analysis, SQL Performance Tuning (Optimizer Hints, DBMS_STATS, EXPLAIN PLAN)",
+    },
+    { label: "Collaboration", items: "Agile/Hybrid Team Collaboration, Clear Written & Verbal Communication" },
+  ],
+
   experience: [
     {
-      role: "Senior Software Engineer",
-      company: "Nimbus Cloud Systems",
-      period: "2022 — Present",
-      location: "Remote",
+      role: "Package Development Associate, Oracle Development & Support",
+      company: "Accenture",
+      period: "Oct 2024 — Present",
+      location: "Hybrid",
       achievements: [
-        "Led migration of a monolithic Rails app to a microservices architecture, reducing average API latency by 42%.",
-        "Designed and shipped an internal design system used across 12 product teams, cutting frontend dev time by 30%.",
-        "Mentored 4 junior engineers, 3 of whom were promoted within a year.",
+        "Monitor enterprise data warehouse batch jobs and ETL schedules, proactively identifying and resolving missing files and ABENDs to sustain on-time production run completion.",
+        "Develop, debug, and deploy Oracle PL/SQL packages, procedures, functions, and triggers to deliver production code fixes, reducing recurring defects and cutting manual rework.",
+        "Analyze and tune SQL query performance using Optimizer Hints and DBMS_STATS, improving execution time on high-volume data warehouse queries.",
+        "Diagnose and resolve data-load and file-transfer failures via PuTTY and WinSCP, maintaining uninterrupted upstream and downstream ETL data flow across daily/weekly jobs.",
+        "Triage and resolve production support tickets within SLA as part of a 3-member hybrid support pod, using SQL Developer and VS Code for root-cause analysis and fixes.",
+        "Document recurring incidents and code-fix patterns in a shared knowledge base, reducing repeat-ticket volume and speeding resolution time for the wider team.",
       ],
-      tech: ["React", "TypeScript", "Node.js", "AWS", "GraphQL"],
-    },
-    {
-      role: "Software Engineer",
-      company: "Brightline Labs",
-      period: "2020 — 2022",
-      location: "San Francisco, CA",
-      achievements: [
-        "Built a real-time collaboration engine (CRDT-based) supporting 10k+ concurrent users.",
-        "Improved CI/CD pipeline speed by 55% through parallelized test execution and caching strategies.",
-        "Owned the checkout and payments flow, increasing conversion rate by 18%.",
+      resumeAchievements: [
+        "Write and debug backend code (Oracle PL/SQL packages, procedures, functions, triggers) for production systems, reducing recurring defects by 25% through careful root-cause debugging.",
+        "Tune query performance to improve reliability and scalability, cutting execution time on high-volume queries by 35%.",
+        "Work with REST APIs and cross-system data flows to diagnose and resolve integration issues across 2 daily production jobs.",
+        "Collaborate with a 3-member hybrid team — clear written and verbal communication on issue status and fixes — achieving 95% SLA compliance and 97% on-time completion.",
+        "Document recurring issues and fixes in a shared knowledge base for team-wide use, reducing repeat issues by 20%.",
       ],
-      tech: ["Vue.js", "Python", "PostgreSQL", "Docker", "Redis"],
-    },
-    {
-      role: "Frontend Developer",
-      company: "Pixel & Co.",
-      period: "2018 — 2020",
-      location: "Austin, TX",
-      achievements: [
-        "Rebuilt the flagship marketing site, improving Lighthouse performance score from 61 to 96.",
-        "Implemented component-driven development workflow using Storybook, adopted org-wide.",
-        "Collaborated directly with design to establish a scalable, accessible component library.",
-      ],
-      tech: ["JavaScript", "React", "Sass", "Webpack"],
+      tech: ["Oracle PL/SQL", "SQL Developer", "DBMS_STATS", "PuTTY", "WinSCP", "Unix/Linux"],
     },
   ],
 
   projects: [
     {
-      title: "Aurora Dashboard",
+      title: "Oracle ETL Warehouse Pipeline",
       description:
-        "A real-time analytics dashboard with customizable widgets, live data streaming, and role-based access control. Built for teams managing large-scale infrastructure.",
-      tech: ["React", "TypeScript", "WebSockets", "D3.js"],
-      github: "https://github.com/alexrivera/aurora-dashboard",
-      demo: "https://aurora-dashboard.demo.dev",
+        "A star-schema Oracle data warehouse with a PL/SQL package that loads staging data into dimension and fact tables, with per-row exception handling, error logging, and batch-run tracking modeled on production ETL support workflows.",
+      resumeDescription:
+        "Star-schema Oracle data warehouse with a PL/SQL package loading staging data into dimension and fact tables, with per-row exception handling, error logging, and batch-run tracking modeled on production ETL support workflows",
+      tech: ["Oracle PL/SQL", "ETL", "Data Warehousing", "SQL"],
+      github: "https://github.com/sathish3201/etl-warehouse-pipeline",
+      demo: "#",
       image: "gradient-1",
     },
     {
-      title: "Flowbase CMS",
+      title: "SQL Performance Tuning Case Study",
       description:
-        "A headless, developer-first CMS with a plugin architecture and GraphQL API. Designed for speed and extensibility over convention.",
-      tech: ["Node.js", "GraphQL", "PostgreSQL", "Docker"],
-      github: "https://github.com/alexrivera/flowbase-cms",
-      demo: "https://flowbase.demo.dev",
+        "A documented before/after tuning exercise on a 2M-row Oracle table: DBMS_STATS, a targeted composite index, and Optimizer Hints, with EXPLAIN PLAN evidence for both states.",
+      resumeDescription:
+        "Documented before/after tuning exercise on a 2M-row Oracle table using DBMS_STATS, a targeted composite index, and Optimizer Hints, with EXPLAIN PLAN evidence captured for both states",
+      tech: ["Oracle SQL", "DBMS_STATS", "Optimizer Hints", "EXPLAIN PLAN"],
+      github: "https://github.com/sathish3201/sql-performance-tuning-case-study",
+      demo: "#",
       image: "gradient-2",
     },
     {
-      title: "Synapse AI Agent Toolkit",
+      title: "ETL Incident Triage Automation",
       description:
-        "An open-source toolkit for building composable AI agents with tool-use, memory, and multi-step planning primitives.",
-      tech: ["Python", "FastAPI", "LangChain", "Redis"],
-      github: "https://github.com/alexrivera/synapse-toolkit",
-      demo: "https://synapse-docs.demo.dev",
+        "An n8n workflow that classifies ETL job failures using Claude and drafts ready-to-paste incident tickets, automating the manual triage step in production data support.",
+      resumeDescription:
+        "n8n workflow that classifies ETL job failures using an LLM and drafts ready-to-paste incident tickets, automating the manual triage step in production data support",
+      tech: ["n8n", "Claude/LLM", "Workflow Automation"],
+      github: "https://github.com/sathish3201/etl-incident-triage-automation",
+      demo: "#",
       image: "gradient-3",
     },
     {
-      title: "Pulse — Habit Tracker",
+      title: "MockGenius AI — SaaS Mock Interview Platform",
       description:
-        "A minimalist mobile-first habit tracking PWA with offline support, streak analytics, and shareable progress cards.",
-      tech: ["React Native", "SQLite", "Expo"],
-      github: "https://github.com/alexrivera/pulse-habits",
-      demo: "https://pulse-app.demo.dev",
+        "An AI-powered SaaS application that simulates technical mock interviews. Features JWT authentication, AI-generated interview questions, speech-to-text response submission, instant LLM-based grading with detailed feedback, and a dashboard with score progression analytics.",
+      resumeDescription:
+        "Full MERN-stack app simulating technical mock interviews: JWT authentication, AI-generated interview questions, instant LLM-based grading (Groq/Llama), speech-to-text answer input, and a score-progression dashboard; deployed end-to-end (Render + MongoDB Atlas)",
+      tech: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS", "Groq/Llama API"],
+      github: "https://github.com/sathish3201/mockgenius-ai",
+      demo: "https://mockgenius-ai-1.onrender.com",
       image: "gradient-4",
+    },
+    {
+      title: "NASA Mission Intelligence Pipeline",
+      description:
+        "A fully local NL-to-SQL + RAG pipeline over real Apollo 11, Apollo 13, and Challenger mission data — natural-language SQL generation with a validated read-only guard, semantic search over 5,500+ mission transcript chunks via ChromaDB, and a two-tier cache. Built as an MCP server plus a FastAPI/React demo, deployed on Render with Docker (Tesseract OCR support) and a local Ollama/phone-hosted LLM fallback chain.",
+      resumeDescription:
+        "Local NL-to-SQL + RAG pipeline over real NASA mission data: validated read-only SQL generation, semantic search via ChromaDB over 5,500+ transcript chunks, a two-tier cache, and an MCP server, deployed on Render with Docker",
+      tech: ["React", "FastAPI", "ChromaDB", "SQLite", "Docker", "MCP"],
+      github: "https://github.com/sathish3201/local-agent-pipeline",
+      demo: "https://local-agent-pipeline-frontend.onrender.com",
+      image: "gradient-5",
+    },
+    {
+      title: "Nexoria Technologies — Business Website",
+      description:
+        "A full-stack marketing website for an IT services business, with a React frontend and Node/Express backend serving services, pricing, and portfolio content, a working contact form with email notifications, and a lightweight built-in FAQ chatbot.",
+      resumeDescription:
+        "Full-stack marketing website for an IT services business: React frontend with a Node/Express backend serving services, pricing, and portfolio content, a working contact form with email notifications, and a lightweight built-in FAQ chatbot",
+      tech: ["React", "Node.js", "Express", "Vite"],
+      github: "https://github.com/sathish3201/nexoria-website",
+      demo: "https://nexoria-frontend.onrender.com",
+      image: "gradient-6",
+    },
+    {
+      title: "E-Commerce Storefront Demo",
+      description:
+        "A working storefront demo with product catalog, cart, Razorpay test-mode checkout with server-side payment signature verification, an admin dashboard for inventory and orders, and a built-in FAQ chatbot.",
+      resumeDescription:
+        "Working storefront with product catalog, cart, Razorpay test-mode checkout with server-side payment signature verification, an admin dashboard for inventory and orders, and a built-in FAQ chatbot",
+      tech: ["React", "Node.js", "Express", "Razorpay"],
+      github: "https://github.com/sathish3201/nexoria-website",
+      demo: "https://nexoria-storefront-frontend.onrender.com",
+      image: "gradient-1",
+    },
+    {
+      title: "Object Design Field Guide",
+      description:
+        "A reference doc covering OOP fundamentals with a beginner before/after walkthrough, all five SOLID principles, and six core design patterns (Adapter, Decorator, Strategy, State, Observer, Factory) — each shown before and after, with UML diagrams and working code in Python, Java, C#, and React.",
+      tech: ["OOP", "SOLID", "Design Patterns", "UML"],
+      github: "",
+      demo: "/api/oop-reference",
+      image: "gradient-2",
     },
   ],
 
   skills: [
     {
-      category: "Frontend",
-      icon: "layout-panel-left",
-      items: ["React", "TypeScript", "Next.js", "Vue.js", "Tailwind CSS", "Framer Motion"],
-    },
-    {
-      category: "Backend",
+      category: "PL/SQL & Database",
       icon: "server",
-      items: ["Node.js", "Python", "GraphQL", "REST APIs", "PostgreSQL", "Redis"],
+      items: [
+        "Oracle PL/SQL",
+        "Packages, Procedures, Functions, Triggers",
+        "SQL Performance Tuning",
+        "Optimizer Hints",
+        "DBMS_STATS",
+      ],
     },
     {
-      category: "Cloud & DevOps",
+      category: "ETL & Data Warehousing",
       icon: "cloud",
-      items: ["AWS", "Docker", "Kubernetes", "CI/CD", "Terraform", "GitHub Actions"],
+      items: [
+        "ETL Design & Support",
+        "Data Warehousing",
+        "Batch Job Scheduling",
+        "ABEND Resolution",
+        "Data Quality, Cleansing & Validation",
+      ],
     },
     {
-      category: "Tools & Practices",
+      category: "Tools & Support",
       icon: "wrench",
-      items: ["Git", "Figma", "Storybook", "Jest", "Agile/Scrum", "TDD"],
+      items: ["SQL Developer", "VS Code", "PuTTY", "WinSCP", "Unix/Linux", "Incident & Ticket Management"],
+    },
+    {
+      category: "Emerging Skills",
+      icon: "layout-panel-left",
+      items: ["AI-Assisted Workflow Automation", "n8n", "Claude/LLM Integration", "Agile/Hybrid Collaboration"],
     },
   ],
 
   education: [
     {
-      degree: "B.S. in Computer Science",
-      school: "University of Texas at Austin",
-      period: "2014 — 2018",
+      degree: "B.Tech, Computer Engineering — CGPA: 8.5/10",
+      school: "CMR Engineering College, Hyderabad",
+      period: "Graduated",
+    },
+    {
+      degree: "Intermediate (XII)",
+      school: "Sandeepani Junior College, Kamareddy",
+      period: "2019",
+    },
+    {
+      degree: "SSC (X) — CGPA: 9.3",
+      school: "Zilla Parishad High School, Kondapoor, Kamareddy",
+      period: "2017",
+    },
+  ],
+
+  certifications: [
+    {
+      name: "Java Full Stack Certification",
+      issuer: "Wipro TalentNext",
+      year: "2023",
+      url: "https://drive.google.com/file/d/1gk7wSlls5mJyMfP10AdYUadw734mZGRB/view",
+    },
+    {
+      name: "AI/ML Virtual Internship Certificate",
+      issuer: "",
+      year: "2023",
+      url: "https://drive.google.com/file/d/1gk7wSlls5mJyMfP10AdYUadw734mZGRB/view",
+    },
+    {
+      name: "Smart Coder Certification — Global Rank 1402/22591",
+      issuer: "Smart Interviews",
+      year: "2022",
+      url: "https://smartinterviews.in/certificate/3f36302d",
+    },
+    { name: "HTML Attributes & Tags", issuer: "GL Academy", year: "2022", url: "" },
+  ],
+
+  faq: [
+    {
+      question: "Are you available for freelance work or hiring?",
+      answer:
+        "Sathish is currently working full-time at Accenture but is open to freelance/collaboration opportunities and new roles — best way to reach out is via email or LinkedIn.",
+    },
+    {
+      question: "How do I contact you?",
+      answer:
+        "You can reach Sathish at sathishchakali1023@gmail.com or on LinkedIn: https://linkedin.com/in/sathish-chakali-91221b320",
+    },
+    {
+      question: "Where can I see your code?",
+      answer: "All of Sathish's project source code is on GitHub: https://github.com/sathish3201",
     },
   ],
 };
