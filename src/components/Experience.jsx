@@ -23,7 +23,7 @@ export default function Experience() {
 
         <div className="space-y-10">
           {experience.map((job, i) => (
-            <Reveal key={`${job.company}-${i}`} delay={i * 100}>
+            <Reveal key={`${job.company}-${i}`} delay={i * 100} direction={i % 2 === 0 ? "left" : "right"}>
               <div className="relative flex gap-6 pl-2 sm:gap-8">
                 <div className="glass-panel relative z-10 flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-full border-cyan-400/40 sm:h-10 sm:w-10">
                   <Scene3D

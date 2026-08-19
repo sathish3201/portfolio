@@ -29,7 +29,7 @@ export default function About() {
 
         <div className="grid gap-14 lg:grid-cols-5">
           <div className="lg:col-span-3">
-            <Reveal className="space-y-5">
+            <Reveal direction="left" className="space-y-5">
               {about.paragraphs.map((p, i) => (
                 <p key={i} className="leading-relaxed text-slate-400">
                   {p}
@@ -65,7 +65,7 @@ export default function About() {
           </div>
 
           <div className="lg:col-span-2">
-            <Reveal delay={200} className="grid grid-cols-2 gap-4">
+            <Reveal delay={200} direction="right" className="grid grid-cols-2 gap-4">
               {about.stats.map((stat) => (
                 <TiltCard
                   key={stat.label}

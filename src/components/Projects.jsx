@@ -43,7 +43,7 @@ export default function Projects() {
 
       <div className="grid gap-6 sm:grid-cols-2">
         {projects.map((project, i) => (
-          <Reveal key={project.title} delay={i * 100}>
+          <Reveal key={project.title} delay={i * 100} direction={i % 2 === 0 ? "left" : "right"}>
             <TiltCard
               liftClassName="hover:-translate-y-1.5"
               className="glass-panel group h-full overflow-hidden rounded-2xl hover:border-cyan-400/30 hover:shadow-2xl hover:shadow-cyan-500/10"

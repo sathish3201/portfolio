@@ -40,7 +40,7 @@ export default function Skills() {
           const Icon = ICONS[group.icon] ?? Code2;
           const shape3d = SHAPE_3D[group.icon];
           return (
-            <Reveal key={group.category} delay={i * 100}>
+            <Reveal key={group.category} delay={i * 100} direction={i % 2 === 0 ? "left" : "right"}>
               <TiltCard className="glass-panel h-full rounded-2xl p-6 hover:border-purple-400/30">
                 <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400/20 to-purple-500/20">
                   {shape3d ? (

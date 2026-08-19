@@ -1,6 +1,6 @@
-import { useRef, useMemo } from "react";
+import { useRef, useMemo, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Sphere, Float, Line } from "@react-three/drei";
+import { Sphere, Float, Line, OrbitControls } from "@react-three/drei";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import * as THREE from "three";
 
@@ -100,8 +100,22 @@ function ArchitectureGraph() {
 }
 
 export default function ProjectArchitectureScene() {
+  // Drag-to-rotate and scroll-to-zoom are disabled until the scene is
+  // clicked/focused — the card sits in normal page scroll flow, so an
+  // always-on wheel/drag listener would hijack the visitor's scroll or
+  // text-selection the moment their cursor crosses the card. Clicking
+  // opts in; clicking elsewhere (blur) opts back out.
+  const [focused, setFocused] = useState(false);
+  const [dragging, setDragging] = useState(false);
+
+  const cursorClass = !focused ? "cursor-pointer" : dragging ? "cursor-grabbing" : "cursor-grab";
+
   return (
-    <div className="h-full w-full">
+    <div
+      className={`h-full w-full ${cursorClass}`}
+      onClick={() => setFocused(true)}
+      onPointerLeave={() => setFocused(false)}
+    >
       <Canvas
         camera={{ position: [0, 0, 3.4], fov: 50 }}
         dpr={[1, 1.5]}
@@ -116,6 +130,16 @@ export default function ProjectArchitectureScene() {
             mipmapBlur
           />
         </EffectComposer>
+        <OrbitControls
+          enabled={focused}
+          enableZoom={focused}
+          enableRotate={focused}
+          enablePan={false}
+          minDistance={1.8}
+          maxDistance={5}
+          onStart={() => setDragging(true)}
+          onEnd={() => setDragging(false)}
+        />
       </Canvas>
     </div>
   );

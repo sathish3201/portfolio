@@ -18,7 +18,7 @@ export default function Education() {
 
         <div className="space-y-4">
           {education.map((edu, i) => (
-            <Reveal key={`${edu.school}-${i}`} delay={i * 100}>
+            <Reveal key={`${edu.school}-${i}`} delay={i * 100} direction={i % 2 === 0 ? "left" : "right"}>
               <TiltCard className="glass-panel flex items-center gap-5 rounded-2xl p-6 hover:border-purple-400/30">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400/20 to-purple-500/20">
                   <GraduationCap size={22} className="text-purple-300" />
@@ -66,7 +66,7 @@ export default function Education() {
               );
 
               return (
-                <Reveal key={`${cert.name}-${i}`} delay={i * 100}>
+                <Reveal key={`${cert.name}-${i}`} delay={i * 100} direction={i % 2 === 0 ? "left" : "right"}>
                   {hasUrl ? (
                     <a href={cert.url} target="_blank" rel="noopener noreferrer" className="block">
                       {CardContent}
