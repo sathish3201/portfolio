@@ -49,12 +49,14 @@ function Dot({ status }) {
   );
 }
 
-export default function StatusBadge() {
+export default function StatusBadge({ className = "" }) {
   const { isLive } = usePortfolioData();
   const modelOnline = useModelOnline();
 
   return (
-    <div className="hidden items-center gap-3 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-slate-300 lg:flex">
+    <div
+      className={`flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-slate-300 ${className}`}
+    >
       <span className="flex items-center gap-1.5">
         <Dot status={isLive} />
         API

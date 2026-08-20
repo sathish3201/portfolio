@@ -116,6 +116,9 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
+          <div className="mt-3 border-t border-white/10 pt-3">
+            <StatusBadge className="w-fit" />
+          </div>
         </div>
       )}
     </header>
