@@ -1,6 +1,6 @@
 # Sathish Chakali
 
-**Full Stack Developer**
+**AI/ML Engineer — Agentic AI & RAG Systems Builder**
 Hyderabad, India · [sathishchakali1023@gmail.com](mailto:sathishchakali1023@gmail.com)
 [GitHub](https://github.com/sathish3201) · [LinkedIn](https://linkedin.com/in/sathish-chakali-91221b320)
 
@@ -8,23 +8,23 @@ Hyderabad, India · [sathishchakali1023@gmail.com](mailto:sathishchakali1023@gma
 
 ## Summary
 
-Full stack developer with 1.6+ years of experience at Accenture and a track record of independently building and deploying complete projects — React on the frontend, Node.js, REST APIs, and MongoDB on the backend. Shipped a full MERN-stack SaaS mock interview platform with JWT authentication and live LLM-based grading, a full-stack business marketing site, an e-commerce storefront demo with payment integration, an Oracle ETL data warehouse pipeline, a documented SQL performance tuning case study, and an n8n + LLM incident-triage automation. Brings production discipline from day-to-day Oracle PL/SQL and ETL support work — debugging, exception handling, and reliability under SLA — into every app shipped end-to-end, from local development to live deployment.
+AI/ML engineer building agentic systems end-to-end — retrieval-augmented generation, tool-calling via MCP servers, and NL-to-SQL pipelines with validation guardrails — backed by nearly 2 years of production engineering experience at Accenture (Oct 2024 – Aug 2026) on Oracle-based data warehouse systems. Flagship project: a fully local agentic pipeline over NASA mission data combining natural-language-to-SQL generation (validated by a read-only SqlGuard), semantic search over 5,500+ transcript chunks via ChromaDB, an MCP server exposing these capabilities as callable tools, and a two-tier memory + SQLite cache — built with FastAPI, containerized with Docker, deployed on Render. Also shipped a full MERN-stack SaaS mock interview platform with JWT authentication and live LLM-based grading, a full-stack business marketing site, an e-commerce storefront demo with payment integration, an Oracle ETL data warehouse pipeline, a documented SQL performance tuning case study, and an n8n + LLM incident-triage automation. Brings the same discipline from day-to-day Oracle PL/SQL and ETL support work — validation, exception handling, and reliability under SLA — into every model-backed app shipped end-to-end.
 
-**Focus areas:** Full-stack React & Node.js development · REST API design & integration · Oracle PL/SQL & SQL performance tuning · AI-assisted workflow automation
+**Focus areas:** Agentic AI systems (RAG, tool-calling, MCP servers) · NL-to-SQL generation with validation guardrails · LLM API integration & fine-tuning · Production API design (FastAPI, Node.js, REST) · Oracle PL/SQL & SQL performance tuning
 
 ---
 
 ## Experience
 
 ### Package Development Associate, Oracle Development & Support
-**Accenture** — Hybrid · Oct 2024 — Present
+**Accenture** — Hybrid · Oct 2024 — Aug 2026
 
-- Monitor enterprise data warehouse batch jobs and ETL schedules, proactively identifying and resolving missing files and ABENDs to sustain on-time production run completion.
-- Develop, debug, and deploy Oracle PL/SQL packages, procedures, functions, and triggers to deliver production code fixes, reducing recurring defects and cutting manual rework.
-- Analyze and tune SQL query performance using Optimizer Hints and DBMS_STATS, improving execution time on high-volume data warehouse queries.
-- Diagnose and resolve data-load and file-transfer failures via PuTTY and WinSCP, maintaining uninterrupted upstream and downstream ETL data flow across daily/weekly jobs.
-- Triage and resolve production support tickets within SLA as part of a 3-member hybrid support pod, using SQL Developer and VS Code for root-cause analysis and fixes.
-- Document recurring incidents and code-fix patterns in a shared knowledge base, reducing repeat-ticket volume and speeding resolution time for the wider team.
+- Monitored enterprise data warehouse batch jobs and ETL schedules, proactively identifying and resolving missing files and ABENDs to sustain on-time production run completion.
+- Developed, debugged, and deployed Oracle PL/SQL packages, procedures, functions, and triggers to deliver production code fixes, reducing recurring defects and cutting manual rework.
+- Analyzed and tuned SQL query performance using Optimizer Hints and DBMS_STATS, improving execution time on high-volume data warehouse queries.
+- Diagnosed and resolved data-load and file-transfer failures via PuTTY and WinSCP, maintaining uninterrupted upstream and downstream ETL data flow across daily/weekly jobs.
+- Triaged and resolved production support tickets within SLA as part of a 3-member hybrid support pod, using SQL Developer and VS Code for root-cause analysis and fixes.
+- Documented recurring incidents and code-fix patterns in a shared knowledge base, reducing repeat-ticket volume and speeding resolution time for the wider team.
 
 **Tech:** Oracle PL/SQL, SQL Developer, DBMS_STATS, PuTTY, WinSCP, Unix/Linux
 
