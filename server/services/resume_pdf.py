@@ -134,7 +134,15 @@ def generate_resume_pdf(data: dict[str, Any]) -> bytes:
 
     cert_col = [Paragraph("Certifications", _styles["footerHeading"]), _hr()]
     for cert in data["certifications"]:
-        cert_col.append(Paragraph(cert["name"], _styles["footerName"]))
+        cert_url = cert.get("url", "").strip()
+        # Same link mechanism as project/contact links above: each
+        # certification carries a real verification URL in the data
+        # (Google Drive scan, issuer's own certificate page) that
+        # neither this generator's Node predecessor nor an earlier pass
+        # of this port rendered as clickable -- fixed here to match how
+        # Education.jsx already links certifications on the live site.
+        name_text = _link(cert["name"], cert_url) if cert_url else cert["name"]
+        cert_col.append(Paragraph(name_text, _styles["footerName"]))
         suffix = f"{cert['issuer']} — {cert['year']}" if cert.get("issuer") else str(cert["year"])
         cert_col.append(Paragraph(suffix, _styles["footerDetail"]))
 

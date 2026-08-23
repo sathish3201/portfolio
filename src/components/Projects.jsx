@@ -20,7 +20,7 @@ const GRADIENTS = {
   "gradient-flagship": "from-cyan-500/40 via-purple-500/25 to-purple-600/40",
 };
 
-const API_BASE = import.meta.env.VITE_API_BASE || "https://nexoria-backend-og2p.onrender.com/api";
+const API_BASE = import.meta.env.VITE_API_BASE || "https://portfolio-backend-zeon.onrender.com/api";
 
 // A demo URL starting with "/" (e.g. "/api/oop-reference") is a path on
 // the backend, not this static site's own origin — resolve it against

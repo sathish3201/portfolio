@@ -1,7 +1,9 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import FALLBACK_DATA from "../data-fallback.json";
 
-// Portfolio content lives on nexoria-backend (backend/data/portfolio-site.json)
+// Portfolio content lives on portfolio-backend (server/data/portfolio-site.json,
+// a dedicated FastAPI service — see server/README or the repo history for why
+// this replaced the portfolio-facing routes that used to live on nexoria-backend)
 // so it can be edited without a rebuild/redeploy — but the site must not
 // fully depend on that backend being reachable just to render. src/data-fallback.json
 // is a bundled snapshot of the same content (update it by re-copying that
@@ -9,7 +11,7 @@ import FALLBACK_DATA from "../data-fallback.json";
 // immediately from this snapshot, then quietly swaps in fresh data if the
 // backend responds — so a cold-starting or unreachable backend degrades to
 // "slightly stale content" instead of "blank loading screen forever."
-const API_BASE = import.meta.env.VITE_API_BASE || "https://nexoria-backend-og2p.onrender.com/api";
+const API_BASE = import.meta.env.VITE_API_BASE || "https://portfolio-backend-zeon.onrender.com/api";
 
 const PortfolioDataContext = createContext(null);
 

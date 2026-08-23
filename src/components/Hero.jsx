@@ -14,7 +14,7 @@ const HeroPipelineScene = lazy(() => import("./3d/HeroPipelineScene"));
 
 const SOCIAL_ICONS = { github: GithubIcon, linkedin: LinkedinIcon, twitter: TwitterIcon };
 
-const API_BASE = import.meta.env.VITE_API_BASE || "https://nexoria-backend-og2p.onrender.com/api";
+const API_BASE = import.meta.env.VITE_API_BASE || "https://portfolio-backend-zeon.onrender.com/api";
 
 // resumeUrl from portfolio-site.json is a path relative to the backend
 // (e.g. "/api/resume") — resolve it against the backend's actual origin

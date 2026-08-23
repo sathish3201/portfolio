@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { usePortfolioData } from "../lib/portfolioDataContext";
 
-const API_BASE = import.meta.env.VITE_API_BASE || "https://nexoria-backend-og2p.onrender.com/api";
+const API_BASE = import.meta.env.VITE_API_BASE || "https://portfolio-backend-zeon.onrender.com/api";
 const POLL_INTERVAL_MS = 60_000;
 
 // Polls the backend's /model-status route (never the model's own key —
