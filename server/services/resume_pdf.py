@@ -87,6 +87,14 @@ def generate_resume_pdf(data: dict[str, Any]) -> bytes:
     ]
     story.append(Paragraph("  |  ".join(contact_parts), _styles["contact"]))
 
+    coding_profiles = meta.get("codingProfiles") or []
+    if coding_profiles:
+        profile_links = [_link(p["name"], p["url"], MUTED_COLOR) for p in coding_profiles]
+        story.append(Paragraph(
+            f'<i>Coding Profiles:</i> {"  |  ".join(profile_links)}',
+            _styles["contact"],
+        ))
+
     # Professional Summary
     story.append(Paragraph("Professional Summary", _styles["section"]))
     story.append(_hr())

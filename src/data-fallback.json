@@ -10,7 +10,14 @@
     "social": {
       "github": "https://github.com/sathish3201",
       "linkedin": "https://linkedin.com/in/sathish-chakali-91221b320"
-    }
+    },
+    "codingProfiles": [
+      { "name": "LeetCode", "url": "https://leetcode.com/u/sathish_1023/" },
+      { "name": "CodeChef", "url": "https://www.codechef.com/users/sathish_1023" },
+      { "name": "Codeforces", "url": "https://codeforces.com/profile/208r1a05d1" },
+      { "name": "HackerRank", "url": "https://www.hackerrank.com/profile/208r1a05d11" },
+      { "name": "InterviewBit", "url": "https://www.interviewbit.com/profile/5d1-sathish/" }
+    ]
   },
 
   "hero": {

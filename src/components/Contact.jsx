@@ -66,6 +66,22 @@ export default function Contact() {
             );
           })}
         </div>
+
+        {meta.codingProfiles?.length > 0 && (
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
+            {meta.codingProfiles.map((profile) => (
+              <a
+                key={profile.name}
+                href={profile.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glass-panel rounded-full px-4 py-1.5 font-mono text-xs text-slate-300 transition-colors duration-200 hover:border-cyan-400/40 hover:text-cyan-300"
+              >
+                {profile.name}
+              </a>
+            ))}
+          </div>
+        )}
       </Reveal>
     </section>
   );
