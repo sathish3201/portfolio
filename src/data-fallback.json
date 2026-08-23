@@ -160,6 +160,22 @@
       "github": "",
       "demo": "/api/oop-reference",
       "image": "gradient-1"
+    },
+    {
+      "title": "AI Chatbot for Website Q&A",
+      "description": "A RAG pipeline that ingests a business website's content and answers visitor questions conversationally, built with Python, LangChain, and Hugging Face models, using ChromaDB as the vector store.",
+      "tech": ["Python", "LangChain", "Hugging Face", "ChromaDB", "RAG"],
+      "github": "",
+      "demo": "",
+      "image": "gradient-2"
+    },
+    {
+      "title": "ATS Resume Checker",
+      "description": "A Streamlit tool that scores and analyzes resumes for ATS compatibility, checking formatting issues, missing keywords, and structural problems.",
+      "tech": ["Python", "Streamlit"],
+      "github": "",
+      "demo": "",
+      "image": "gradient-3"
     }
   ],
 
@@ -233,9 +249,12 @@
 
   "certifications": [
     { "name": "Java Full Stack Certification", "issuer": "Wipro TalentNext", "year": "2023", "url": "https://drive.google.com/file/d/1gk7wSlls5mJyMfP10AdYUadw734mZGRB/view" },
-    { "name": "AI/ML Virtual Internship Certificate", "issuer": "", "year": "2023", "url": "https://drive.google.com/file/d/1fROL0btOMy2wP2pxssZJ7b9N-h19l5ev/view?usp=sharing" },
+    { "name": "AI/ML Virtual Internship Certificate", "issuer": "AICTE", "year": "2023", "url": "https://drive.google.com/file/d/1fROL0btOMy2wP2pxssZJ7b9N-h19l5ev/view?usp=sharing" },
     { "name": "Smart Coder Certification — Global Rank 1402/22591", "issuer": "Smart Interviews", "year": "2022", "url": "https://smartinterviews.in/certificate/3f36302d" },
-    { "name": "HTML Attributes & Tags", "issuer": "GL Academy", "year": "2022", "url": "" }
+    { "name": "HTML Attributes & Tags", "issuer": "GL Academy", "year": "2022", "url": "" },
+    { "name": "Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate", "issuer": "Oracle", "year": "2025", "url": "https://catalog-education.oracle.com/pls/certview/sharebadge?id=5770389206EFA7642AC2E1EAA018C0F2D6ADCD08636833023F618BD01D5A5AF2" },
+    { "name": "Oracle Fusion AI Agent Studio Certified Foundations Associate - Rel 1", "issuer": "Oracle", "year": "2026", "url": "https://catalog-education.oracle.com/pls/certview/sharebadge?id=033D533BEA9E1DD4098AC4990A7B80D924D923B5B3F7C37A35D13D7ADFF9B305" },
+    { "name": "Oracle Cloud Infrastructure 2025 Certified Foundations Associate", "issuer": "Oracle", "year": "2026", "url": "https://catalog-education.oracle.com/pls/certview/sharebadge?id=8F564295B804BA5136BD3F17D5CCA4605C6BCE83A5EDD3EB3701C1B0D8455AF8" }
   ],
 
   "faq": [

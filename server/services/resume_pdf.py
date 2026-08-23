@@ -10,6 +10,7 @@ Certifications footer).
 """
 import io
 from typing import Any
+from xml.sax.saxutils import escape
 
 from reportlab.lib.pagesizes import LETTER
 from reportlab.lib.units import inch
@@ -47,8 +48,19 @@ def _hr():
     return HRFlowable(width="100%", thickness=0.75, color=RULE_COLOR, spaceAfter=6)
 
 
+def _esc(text: str) -> str:
+    """Escapes raw data-driven text for ReportLab's mini-XML Paragraph
+    markup -- every interpolated title/description/name/etc. below must
+    go through this (an unescaped "&" or "<" corrupts the markup, e.g.
+    "AI Chatbot for Website Q&A" rendering as "Q&A;" with the entity
+    left dangling). The literal <b>/<a href> tags this module writes
+    itself are NOT escaped -- only the untrusted data slotted into them.
+    """
+    return escape(text)
+
+
 def _link(text: str, url: str, color=LINK_COLOR) -> str:
-    return f'<a href="{url}" color="#{color.hexval()[2:]}">{text}</a>'
+    return f'<a href="{escape(url, {chr(34): "&quot;"})}" color="#{color.hexval()[2:]}">{_esc(text)}</a>'
 
 
 def generate_resume_pdf(data: dict[str, Any]) -> bytes:
@@ -61,14 +73,14 @@ def generate_resume_pdf(data: dict[str, Any]) -> bytes:
     story = []
 
     meta = data["meta"]
-    story.append(Paragraph(meta["name"], _styles["name"]))
+    story.append(Paragraph(_esc(meta["name"]), _styles["name"]))
 
     short_tagline = meta["tagline"].replace(" on the frontend — ", " | ").replace(" on the backend.", "")
-    story.append(Paragraph(f"{meta['role']} | {short_tagline}", _styles["role"]))
+    story.append(Paragraph(f"{_esc(meta['role'])} | {_esc(short_tagline)}", _styles["role"]))
 
     contact_parts = [
-        meta["location"],
-        meta["phone"],
+        _esc(meta["location"]),
+        _esc(meta["phone"]),
         _link(meta["email"], f"mailto:{meta['email']}", MUTED_COLOR),
         _link(meta["social"]["linkedin"].removeprefix("https://").removeprefix("http://"), meta["social"]["linkedin"], MUTED_COLOR),
         _link(meta["social"]["github"].removeprefix("https://").removeprefix("http://"), meta["social"]["github"], MUTED_COLOR),
@@ -78,21 +90,21 @@ def generate_resume_pdf(data: dict[str, Any]) -> bytes:
     # Professional Summary
     story.append(Paragraph("Professional Summary", _styles["section"]))
     story.append(_hr())
-    story.append(Paragraph(data["resumeSummary"], _styles["body"]))
+    story.append(Paragraph(_esc(data["resumeSummary"]), _styles["body"]))
 
     # Core Skills
     story.append(Paragraph("Core Skills", _styles["section"]))
     story.append(_hr())
     for group in data["resumeSkillGroups"]:
-        story.append(Paragraph(f"<b>{group['label']}:</b> {group['items']}", _styles["skillLine"]))
+        story.append(Paragraph(f"<b>{_esc(group['label'])}:</b> {_esc(group['items'])}", _styles["skillLine"]))
 
     # Professional Experience
     story.append(Paragraph("Professional Experience", _styles["section"]))
     story.append(_hr())
     for job in data["experience"]:
-        date_text = f"{job['period']} | {job['location']}"
+        date_text = f"{_esc(job['period'])} | {_esc(job['location'])}"
         title_row = Table(
-            [[Paragraph(f"{job['role']} — {job['company']}", _styles["jobTitle"]), Paragraph(date_text, _styles["jobDate"])]],
+            [[Paragraph(f"{_esc(job['role'])} — {_esc(job['company'])}", _styles["jobTitle"]), Paragraph(date_text, _styles["jobDate"])]],
             colWidths=[doc.width * 0.68, doc.width * 0.32],
         )
         title_row.setStyle(TableStyle([
@@ -104,7 +116,7 @@ def generate_resume_pdf(data: dict[str, Any]) -> bytes:
         ]))
         story.append(title_row)
         for bullet in job.get("resumeAchievements") or job["achievements"]:
-            story.append(Paragraph(f"•&nbsp;&nbsp;{bullet}", _styles["bullet"]))
+            story.append(Paragraph(f"•&nbsp;&nbsp;{_esc(bullet)}", _styles["bullet"]))
         story.append(Spacer(1, 4))
 
     # Projects
@@ -113,7 +125,7 @@ def generate_resume_pdf(data: dict[str, Any]) -> bytes:
     for project in data["projects"]:
         has_demo = bool(project.get("demo")) and project["demo"] != "#"
         description = project.get("resumeDescription") or project["description"]
-        story.append(Paragraph(f"<b>{project['title']} —</b> {description}", _styles["projectTitle"]))
+        story.append(Paragraph(f"<b>{_esc(project['title'])} —</b> {_esc(description)}", _styles["projectTitle"]))
 
         link_parts = []
         if project.get("github"):
@@ -129,8 +141,8 @@ def generate_resume_pdf(data: dict[str, Any]) -> bytes:
     story.append(Spacer(1, 6))
     edu_col = [Paragraph("Education", _styles["footerHeading"]), _hr()]
     for edu in data["education"]:
-        edu_col.append(Paragraph(edu["degree"], _styles["footerName"]))
-        edu_col.append(Paragraph(f"{edu['school']} | {edu['period']}", _styles["footerDetail"]))
+        edu_col.append(Paragraph(_esc(edu["degree"]), _styles["footerName"]))
+        edu_col.append(Paragraph(f"{_esc(edu['school'])} | {_esc(edu['period'])}", _styles["footerDetail"]))
 
     cert_col = [Paragraph("Certifications", _styles["footerHeading"]), _hr()]
     for cert in data["certifications"]:
@@ -141,9 +153,9 @@ def generate_resume_pdf(data: dict[str, Any]) -> bytes:
         # neither this generator's Node predecessor nor an earlier pass
         # of this port rendered as clickable -- fixed here to match how
         # Education.jsx already links certifications on the live site.
-        name_text = _link(cert["name"], cert_url) if cert_url else cert["name"]
+        name_text = _link(cert["name"], cert_url) if cert_url else _esc(cert["name"])
         cert_col.append(Paragraph(name_text, _styles["footerName"]))
-        suffix = f"{cert['issuer']} — {cert['year']}" if cert.get("issuer") else str(cert["year"])
+        suffix = f"{_esc(cert['issuer'])} — {_esc(str(cert['year']))}" if cert.get("issuer") else _esc(str(cert["year"]))
         cert_col.append(Paragraph(suffix, _styles["footerDetail"]))
 
     footer_table = Table([[edu_col, cert_col]], colWidths=[doc.width * 0.48, doc.width * 0.48])
