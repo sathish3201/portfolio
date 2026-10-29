@@ -88,7 +88,7 @@ export default function Navbar() {
         <div className="hidden items-center gap-3 md:flex">
           <StatusBadge />
           <a
-            href="/latest-resume.html"
+            href="/portfolio/latest-resume.html"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-slate-200 transition-all duration-200 hover:bg-white/10 hover:text-white"
@@ -134,7 +134,7 @@ export default function Navbar() {
             ))}
             <li>
               <a
-                href="/latest-resume.html"
+                href="/portfolio/latest-resume.html"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 rounded-lg px-4 py-3 text-left text-sm font-medium text-cyan-300 transition-colors hover:bg-white/5"
