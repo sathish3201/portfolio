@@ -30,7 +30,7 @@
       "LangChain",
       "LangGraph",
       "RAG",
-      "FastAPI",
+      "FastAPI"
     ],
     "summary": "I'm a software developer focused on Python, Data Science, Machine Learning, Generative AI, and Agentic AI, with a background in enterprise application development and data processing."
   },
