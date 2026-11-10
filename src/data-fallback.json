@@ -98,7 +98,7 @@
       "resumeDescription": "Enterprise HR Policy Agentic RAG Copilot: LangGraph, FastAPI, Pinecone, Groq API, and SQLite with smart routing, dynamic evidence grading, targeted Tavily web search fallback, and zero-hallucination guardrails",
       "tech": ["LangGraph", "FastAPI", "Pinecone", "Groq API", "SQLite", "Tavily"],
       "github": "https://github.com/sathish3201/Enterprise-HR-Policy-Employee-Support-Agentic-RAG-Copilot",
-      "demo": "",
+      "demo": "https://enterprise-hr-policy-employee-support-s1yj.onrender.com",
       "image": "gradient-1"
     },
     {
