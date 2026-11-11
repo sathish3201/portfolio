@@ -110,6 +110,15 @@
       "demo": "https://trip-planner-multi-agent-system-with-v7mu.onrender.com",
       "image": "gradient-3"
     },
+    {
+      "title": "Agentic Writer — Multi-Agent LangGraph Pipeline with Local LLM",
+      "description": "An intelligent multi-agent writing system built on LangGraph using a lightweight local model (Qwen2.5 3B) where architecture outweighs model size. Features a conditional router determining research needs, parallel threaded web research for speed optimization, task decomposition via an orchestrator, and worker-reducer nodes for structured synthesis. Implemented on FastAPI and deployed on Render, utilizing Groq with token-per-minute (TPM) management to handle rate limits efficiently.",
+      "resumeDescription": "Multi-agent writing pipeline (LangGraph + FastAPI) powered by a lightweight local LLM (Qwen2.5 3B); features conditional routing, multi-threaded parallel web research, orchestrator-worker-reducer task decomposition, and optimized Groq TPM handling to bypass rate limits; deployed on Render",
+      "tech": ["LangGraph", "Python", "FastAPI", "Groq", "Qwen", "Docker"],
+      "github": "https://github.com/sathish3201/agentic_writer_ai",
+      "demo": "https://agentic-writer-ai.onrender.com",
+      "image": "gradient-flagship"
+    },
     
     {
       "title": "Local Agent Pipeline — NL-to-SQL + RAG + MCP",
