@@ -101,6 +101,16 @@
       "demo": "https://enterprise-hr-policy-employee-support-s1yj.onrender.com",
       "image": "gradient-1"
     },
+     {
+      "title": "VoyageCraft AI — Multi-Agent Travel Planner",
+      "description": "An intelligent multi-agent travel planner built with LangGraph, Supervisor Architecture, MCP, FastAPI, Groq, PostgreSQL, Tavily, and AviationStack to orchestrate specialized agents handling flights, stays, budgets, and guardrails.",
+      "resumeDescription": "VoyageCraft AI multi-agent travel planner: LangGraph supervisor architecture, MCP tools, FastAPI, Groq, PostgreSQL, Tavily, and AviationStack with Human-in-the-Loop review",
+      "tech": ["LangGraph", "MCP", "FastAPI", "Groq", "PostgreSQL", "Tavily"],
+      "github": "https://github.com/sathish3201/trip-planner-multi-agent-system-with-guardrails-hitl",
+      "demo": "https://trip-planner-multi-agent-system-with-v7mu.onrender.com",
+      "image": "gradient-3"
+    },
+    
     {
       "title": "Local Agent Pipeline — NL-to-SQL + RAG + MCP",
       "description": "A fully local agentic pipeline over NASA mission data: natural-language-to-SQL generation validated by a read-only SqlGuard, semantic search over 5,500+ transcript chunks via ChromaDB, an MCP server exposing it all as callable tools, and a two-tier (memory + SQLite) cache. Built with FastAPI, containerized with Docker, and deployed on Render.",
@@ -127,15 +137,7 @@
       "demo": "",
       "image": "gradient-2"
     },
-    {
-      "title": "VoyageCraft AI — Multi-Agent Travel Planner",
-      "description": "An intelligent multi-agent travel planner built with LangGraph, Supervisor Architecture, MCP, FastAPI, Groq, PostgreSQL, Tavily, and AviationStack to orchestrate specialized agents handling flights, stays, budgets, and guardrails.",
-      "resumeDescription": "VoyageCraft AI multi-agent travel planner: LangGraph supervisor architecture, MCP tools, FastAPI, Groq, PostgreSQL, Tavily, and AviationStack with Human-in-the-Loop review",
-      "tech": ["LangGraph", "MCP", "FastAPI", "Groq", "PostgreSQL", "Tavily"],
-      "github": "https://github.com/sathish3201/trip-planner-multi-agent-system-with-guardrails-hitl",
-      "demo": "",
-      "image": "gradient-3"
-    },
+ 
       {
       "title": "MockGenius AI — SaaS Mock Interview Platform",
       "description": "An AI-powered SaaS application that simulates technical mock interviews. Features JWT authentication, AI-generated interview questions, speech-to-text response submission, instant LLM-based grading with detailed feedback, and a dashboard with score progression analytics.",
