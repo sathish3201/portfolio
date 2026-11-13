@@ -143,7 +143,7 @@
       "resumeDescription": "AI Workspace with Human-in-the-Loop (HITL): React, FastAPI, LangGraph, and streaming responses with interactive user approval protocols for sensitive tool execution",
       "tech": ["React", "FastAPI", "LangGraph", "SQLite"],
       "github": "https://github.com/sathish3201/ai-workspace",
-      "demo": "",
+      "demo": "https://sathish3201.github.io/ai-workspace/",
       "image": "gradient-2"
     },
  
@@ -191,7 +191,7 @@
       "description": "A RAG pipeline that ingests a business website's content and answers visitor questions conversationally, built with Python, LangChain, and Hugging Face models, using ChromaDB as the vector store.",
       "tech": ["Python", "LangChain", "Hugging Face", "ChromaDB", "RAG"],
       "github": "https://github.com/sathish3201/agentic_ai",
-      "demo": "",
+      "demo": "https://agentic-chatbot-wah3.onrender.com",
       "image": "gradient-2"
     },
     {
